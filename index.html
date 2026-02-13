@@ -3,136 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>¿Quieres ser mi San Valentín?</title>
+  <title>Mariana</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
-
     body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+      background-color: #FEA8C5;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
       text-align: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 20px;
+      overflow: hidden;
     }
 
     h1 {
-      color: white;
-      font-size: 1.8rem;
+      color: #d46a85;
+      font-size: 2.5rem;
       margin-bottom: 20px;
     }
 
-    .cat {
-      font-size: 5rem;
-      margin-bottom: 20px;
+    .gif-container {
+      margin: 20px 0;
+    }
+
+    .gif-container img {
+      width: 150px;
+      height: auto;
     }
 
     .buttons {
       position: relative;
-      height: 120px;
+      width: 100%;
+      max-width: 320px;
+      height: 140px;
     }
 
-    button {
+    .btn {
+      font-size: 1.5rem;
+      padding: 10px 20px;
       border: none;
-      padding: 14px 28px;
-      font-size: 1.1rem;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
-      position: absolute;
       transition: all 0.25s ease;
+      position: absolute;
     }
 
-    #yes {
-      background-color: #22c55e;
+    .yes-btn {
+      background-color: green;
       color: white;
       left: 50%;
-      transform: translateX(-50%);
       bottom: 0;
+      transform: translateX(-50%);
     }
 
-    #no {
-      background-color: #dc2626;
+    .no-btn {
+      background-color: orangered;
       color: white;
       left: 50%;
-      transform: translateX(-50%);
       top: 0;
+      transform: translateX(-50%);
     }
 
-    .message {
-      color: white;
-      font-size: 1.6rem;
-      margin-top: 30px;
-      display: none;
-    }
-
-    /* Responsive extra */
     @media (max-width: 400px) {
       h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
-      .cat {
-        font-size: 4rem;
+      .btn {
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>¿Quieres ser mi San Valentín? 💕</h1>
 
-    <div class="cat">🐱💖</div>
+  <h1>¿Quieres ser mi San Valentín?</h1>
 
-    <div class="buttons">
-      <button id="no">No</button>
-      <button id="yes">Sí</button>
-    </div>
+  <div class="gif-container">
+    <img src="valentine.gif" alt="Happy Bear">
+  </div>
 
-    <div class="message" id="message">
-      💘 Sabía que dirías que sí 💘<br />
-      Te quiero mucho 🥰
-    </div>
+  <div class="buttons">
+    <button class="btn no-btn">No</button>
+    <button class="btn yes-btn">Si</button>
   </div>
 
   <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    const message = document.getElementById("message");
-
-    function moveNoButton() {
-      const container = document.querySelector(".buttons");
-
-      const maxX = container.clientWidth - noBtn.offsetWidth;
-      const maxY = container.clientHeight - noBtn.offsetHeight;
-
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-    }
-
-    // Para móvil (touch)
-    noBtn.addEventListener("touchstart", moveNoButton);
-
-    // Para desktop (mouse)
-    noBtn.addEventListener("mouseenter", moveNoButton);
-
-    yesBtn.addEventListener("click", () => {
-      message.style.display = "block";
-      document.querySelector(".buttons").style.display = "none";
-    });
-  </script>
-</body>
-</html>
+    const noButton = document.querySelector('.no-btn');
+    const yesButton = docu
