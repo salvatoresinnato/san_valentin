@@ -93,4 +93,33 @@
 
   <script>
     const noButton = document.querySelector('.no-btn');
-    const yesButton = docu
+    const yesButton = document.querySelector('.yes-btn');
+    const buttonsContainer = document.querySelector('.buttons');
+
+    function moveNoButton() {
+      const maxX = buttonsContainer.clientWidth - noButton.offsetWidth;
+      const maxY = buttonsContainer.clientHeight - noButton.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    }
+
+    // Desktop
+    noButton.addEventListener('mouseenter', moveNoButton);
+
+    // Mobile (MUY importante)
+    noButton.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      moveNoButton();
+    });
+
+    yesButton.addEventListener('click', () => {
+      window.location.href = 'si.html';
+    });
+  </script>
+
+</body>
+</html>
